@@ -278,13 +278,12 @@ body {
     color: black;
   }
   #bgPic {
+    visibility: hidden;
     position: absolute;
     height: 100vh;
     width: 100vw;
     -o-object-fit: cover;
        object-fit: cover;
-    -o-object-position: -50vh 10vh;
-       object-position: -50vh 10vh;
     opacity: 0.15;
   }
   main {
@@ -378,7 +377,7 @@ body {
     color: rgb(137, 0, 0);
   }
   nav ul li.active a {
-    color: rgb(137, 0, 0);
+    color: white;
     position: relative;
   }
   nav ul li.active a::before {
@@ -452,6 +451,7 @@ body {
   #products {
     position: relative;
     width: 100%;
+    margin-bottom: 50px;
   }
   #products .prod {
     display: flex;
@@ -495,19 +495,18 @@ body {
   footer {
     position: relative;
     width: 100%;
-    height: 75vh;
     background-color: black;
   }
   footer img {
     width: 50px;
     filter: invert(1);
-    position: absolute;
-    bottom: 25px;
+    position: relative;
     left: calc(50% - 25px);
+    margin: 50px 0 10px 0;
   }
   footer #copyRight {
-    position: absolute;
-    bottom: 2px;
+    position: relative;
+    margin-bottom: 2px;
     width: 100%;
     margin: 0;
     color: white;
