@@ -1,0 +1,529 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&display=swap");
+* {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+*::-moz-selection {
+  color: white;
+  background-color: rgb(137, 0, 0);
+}
+*::selection {
+  color: white;
+  background-color: rgb(137, 0, 0);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 1150px) {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(137, 0, 0);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(137, 0, 0);
+  }
+  nav {
+    position: fixed;
+    height: 100px;
+    width: calc(100% - 100px);
+    left: 50px;
+    top: 0;
+    border-bottom: 2px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 2;
+  }
+  nav div#LogoText {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+  nav div#LogoText img {
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: 35%;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: all 250ms ease-in-out;
+    position: relative;
+  }
+  nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+    transition: all 250ms ease-in-out;
+  }
+  nav ul li a:hover {
+    color: rgb(137, 0, 0);
+  }
+  nav ul li a:hover::before {
+    width: 100%;
+  }
+  nav ul li.active a {
+    color: rgb(137, 0, 0);
+  }
+  nav ul li.active a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+  }
+  #bgPic {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    z-index: -1;
+    opacity: 0.1;
+    left: calc(50vw - 50vh);
+    top: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+    -webkit-user-drag: none;
+  }
+  main {
+    position: relative;
+    width: 40%;
+    height: 100vh;
+    left: 30%;
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main p {
+    text-align: center;
+    line-height: 2;
+  }
+  main p span {
+    position: relative;
+  }
+  main p span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+    transition: all 250ms ease-in-out;
+  }
+  main a#prodLink {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    line-height: 2;
+    text-decoration: none;
+    color: rgb(137, 0, 0);
+    transition: all 250ms ease-in-out;
+    font-size: large;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  main a#prodLink:hover {
+    line-height: 2.5;
+  }
+  main a#prodLink span {
+    font-size: x-large;
+  }
+  #products {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+  #products .prod {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+  }
+  #products .prod:not(.last) {
+    padding-bottom: 50px;
+    border-bottom: 2px solid black;
+  }
+  #products .prod.wrap {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  #products .prod.wrap div a {
+    right: 0;
+  }
+  #products .prod img {
+    width: 150px;
+    outline: 5px solid rgb(137, 0, 0);
+    outline-offset: 15px;
+    border-radius: 50%;
+    margin: 20px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  #products .prod div {
+    margin: 20px;
+    position: relative;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #products .prod div a {
+    margin-top: 15px;
+    position: absolute;
+    padding: 10px 15px;
+    border: 3px solid black;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    transition: all 250ms ease-in-out;
+  }
+  #products .prod div a::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(137, 0, 0);
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 250ms ease-in-out;
+  }
+  #products .prod div a:hover {
+    color: white;
+    transform: scale(1.1);
+  }
+  #products .prod div a:hover::after {
+    width: 100%;
+    left: 0;
+  }
+  footer {
+    position: relative;
+    width: 100%;
+    height: 35vh;
+    margin-top: 50px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    padding-top: 10vh;
+  }
+  footer img {
+    width: 150px;
+    height: 150px;
+    margin: 15px 100px;
+    filter: invert(1);
+  }
+  footer div {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+  }
+  footer div h2 {
+    color: white;
+  }
+  footer div a {
+    text-decoration: none;
+    color: white;
+  }
+  footer p#copyRight {
+    position: absolute;
+    bottom: 0;
+    right: 50px;
+    color: white;
+    opacity: 0.7;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 1150px) {
+  a {
+    transition: all 250ms ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  a:active {
+    color: black;
+  }
+  #bgPic {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: -50vh 10vh;
+       object-position: -50vh 10vh;
+    opacity: 0.15;
+  }
+  main {
+    position: relative;
+    width: 80%;
+    height: calc(100% - 150px);
+    padding: 75px 10%;
+    left: 0;
+  }
+  main h1 {
+    text-align: center;
+    font-weight: 900;
+    margin-bottom: calc(5% + 25px);
+  }
+  main p {
+    text-align: center;
+    line-height: 1.5;
+  }
+  main p span {
+    position: relative;
+  }
+  main p span::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+    transition: all 250ms ease-in-out;
+  }
+  main a {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    line-height: 1.5;
+    text-decoration: none;
+    color: rgb(137, 0, 0);
+    font-weight: 900;
+  }
+  main a span {
+    font-size: x-large;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    right: -100%;
+    background-color: black;
+    z-index: 1;
+    transition: all 250ms ease-in-out;
+  }
+  nav #LogoText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    bottom: 0;
+    position: absolute;
+  }
+  nav #LogoText a img {
+    filter: invert(1);
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+  }
+  nav #LogoText h2 {
+    color: white;
+    font-size: large;
+    opacity: 0.9;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    top: 15%;
+    width: 100%;
+  }
+  nav ul li {
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  nav ul li a:active {
+    color: rgb(137, 0, 0);
+  }
+  nav ul li.active a {
+    color: rgb(137, 0, 0);
+    position: relative;
+  }
+  nav ul li.active a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+  }
+  nav.open {
+    right: 0;
+  }
+  nav.open div#LogoText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  nav.open div#LogoText a img {
+    filter: invert(1);
+    height: 100px;
+    width: 100px;
+    margin: 25px;
+  }
+  nav.open div#LogoText h2 {
+    color: white;
+    font-size: large;
+    opacity: 0.9;
+  }
+  #burgerBtn {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    transition: all 250ms ease-in-out;
+    z-index: 1;
+  }
+  #burgerBtn::before, #burgerBtn::after {
+    content: "";
+    width: 25px;
+    height: 2.5px;
+    left: 0;
+    position: absolute;
+    background-color: black;
+    transition: all 250ms ease-in-out;
+  }
+  #burgerBtn::after {
+    margin-top: -7.5px;
+  }
+  #burgerBtn::before {
+    margin-top: 7.5px;
+  }
+  #burgerBtn.open {
+    width: 20px;
+    transform: rotate(45deg);
+    background-color: white;
+  }
+  #burgerBtn.open::before {
+    width: 20px;
+    transform: rotate(-90deg);
+    margin: 0;
+    background-color: white;
+  }
+  #burgerBtn.open::after {
+    width: 0;
+  }
+  #products {
+    position: relative;
+    width: 100%;
+  }
+  #products .prod {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  #products .prod:not(.last)::after {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    left: 15%;
+    bottom: 0;
+    background-color: rgb(137, 0, 0);
+    border-radius: 15px;
+  }
+  #products .prod img {
+    width: 75px;
+    height: 75px;
+    margin-right: 15px;
+    outline: 2px solid rgb(137, 0, 0);
+    border-radius: 50%;
+  }
+  #products .prod div h2 {
+    font-size: large;
+  }
+  #products .prod div p {
+    font-size: small;
+  }
+  #products .prod div a {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 10%;
+    top: 0;
+    color: transparent;
+  }
+  footer {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background-color: black;
+  }
+  footer img {
+    width: 50px;
+    filter: invert(1);
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 25px);
+  }
+  footer #copyRight {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    margin: 0;
+    color: white;
+    opacity: 0.9;
+    font-size: small;
+    text-align: center;
+  }
+  footer div {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+  footer div a {
+    text-decoration: none;
+    color: white;
+  }
+}/*# sourceMappingURL=style.css.map */
