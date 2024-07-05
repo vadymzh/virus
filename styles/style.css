@@ -290,7 +290,7 @@ body {
   main {
     position: relative;
     width: 80%;
-    height: calc(100% - 150px);
+    height: calc(100vh - 150px);
     padding: 75px 10%;
     left: 0;
   }
