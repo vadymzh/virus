@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна | Корпорація Мережа</title>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!--
+    nav +
+    img +
+    main +
+    products +
+    footer
+    -->
+</head>
+
+<body>
+    <nav>
+        <div id="LogoText">
+            <a href="#"><img src="img/logo.png" alt="Логотип компанії"></a>
+            <h2>Корпорація<br>Мережа</h2>
+        </div>
+
+        <ul>
+            <li class="active"><a href="#">Головна</a></li>
+            <li><a href="">Ціни</a></li>
+            <li><a href="">Партнери</a></li>
+            <li><a href="">Новини</a></li>
+            <li><a href="">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <div id="burgerBtn"></div>
+
+    <img src="img/Liga.png" alt="Фон" id="bgPic">
+
+    <main>
+        <h1>ЛІГА:ЗАКОН у Львові</h1>
+        <p>Ми, як сертифікований постачальник продукції ЛІГА:Закон у <span>Львові</span> та області,
+            пропонуємо Вам інструменти, які допоможуть відстежувати та аналізувати зміни
+            в <span>правовому</span> полі. Пропозиції будуть цікаві юристу, бухгалтеру, директору, керівнику та
+            іншим.<br>
+            Є можливість <span>спробувати</span> продукт перед купівлею.</p>
+
+        <a href="#products" id="prodLink">Перейти до продуктів <br><span>&#x2B07;</span>
+        </a>
+    </main>
+
+    <div id="products">
+        <div class="prod">
+            <img src="img/products/1.png" alt="Продукт">
+            <div>
+                <h2>LIGA360 PRO</h2>
+                <p>Рішення нового покоління для пошуку й аналізу інформації.</p>
+                <a href="">Більше</a>
+            </div>
+        </div>
+
+        <div class="prod">
+            <img src="img/products/1.png" alt="Продукт">
+            <div>
+                <h2>LIGA360: Legal Solution</h2>
+                <p>Фахівцям, яким потрібно знати норми законодавства і відстежувати зміни.</p>
+                <a href="">Більше</a>
+            </div>
+        </div>
+
+        <div class="prod">
+            <img src="img/products/2.png" alt="Продукт">
+            <div>
+                <h2>LIGA360: Керівник</h2>
+                <p>ІТ-платформа для керування інформацією та мінімізації бізнес-ризиків.</p>
+                <a href="">Більше</a>
+            </div>
+        </div>
+
+        <div class="prod">
+            <img src="img/products/3.png" alt="Продукт">
+            <div>
+                <h2>LIGA360: Юрист</h2>
+                <p>IT-платформа для мінімізації юридичних ризиків та виконання професійних задач</p>
+                <a href="">Більше</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <img src="img/logo.png" alt="">
+        <div>
+            <h2>Сторінки</h2>
+            <a href="">Головна</a>
+            <a href="">Ціни</a>
+            <a href="">Партнери</a>
+            <a href="">Новини</a>
+            <a href="">Контакти</a>
+        </div>
+        <div>
+            <h2>Зв'язатися з нами</h2>
+            <a href="">merega@intermerega.net</a>
+            <a href="">+38(032)-240-30-34</a>
+            <a href="">+38(098)-983-24-51</a>
+            <a href="">+38(066)-093-10-52</a>
+        </div>
+        <p id="copyRight">&#169; Корпорація "Мережа" 1993-2024</p>
+    </footer>
+
+    <script>
+        //Посилання на продукти
+        window.addEventListener("scroll", () => {
+            var y = window.pageYOffset;
+            if (y > 50) {
+                document.getElementById("prodLink").style.opacity = 0;
+            }
+            else {
+                document.getElementById("prodLink").style.opacity = 1;
+            }
+        })
+
+        //Останній в списку продуктів
+        var products = document.getElementById("products");
+        products.children[products.childElementCount - 1].classList.add("last");
+
+        if (window.matchMedia("(min-width: 1150px)").matches) {
+
+
+            //Перевертання продуктів ліво-право
+            
+            for (i = 1; i < products.childElementCount; i += 2) {
+                products.children[i].classList.add("wrap");
+            }
+            
+        }
+
+        if (window.matchMedia("(min-width: 300px) and (max-width:1150px)").matches) {
+
+            //Меню для мобілок
+            document.getElementById("burgerBtn").addEventListener("click", () => {
+                document.getElementById("burgerBtn").classList.toggle("open");
+                document.querySelector("nav").classList.toggle("open");
+            })
+        }
+    </script>
+
+</body>
+
+</html>
