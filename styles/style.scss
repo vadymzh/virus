@@ -371,14 +371,12 @@ body {
         }
 
         a {
-            //Погано виглядає на мобілках
-            //visibility: hidden;
             position: fixed;
             text-align: center;
             width: 100%;
             bottom: 0;
             left: 0;
-            line-height: 1.5;
+            line-height: 2;
             text-decoration: none;
             color: $prime;
             font-weight: 900;
