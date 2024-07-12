@@ -1,0 +1,129 @@
+@media screen and (min-width: 1150px) {
+  main {
+    position: absolute;
+    width: 70%;
+    height: calc(100% - 100px);
+    left: 15%;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+  }
+  main h1 {
+    text-align: center;
+    margin: 100px;
+  }
+  main div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  main div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: end;
+    width: 40%;
+    position: relative;
+  }
+  main div ul li {
+    padding: 0;
+    margin: 15px 0 20px 0;
+    position: relative;
+    cursor: pointer;
+  }
+  main div ul li::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    border-radius: 10px;
+    background-color: rgb(137, 0, 0);
+    transition: all 250ms ease-in-out;
+    transition-delay: 500ms;
+    z-index: 1;
+  }
+  main div ul li:hover {
+    color: rgb(137, 0, 0);
+  }
+  main div ul li:hover::before {
+    width: 100%;
+    transition-delay: 0s;
+  }
+  main div ul li span {
+    position: absolute;
+    left: 0;
+    color: black;
+  }
+  main div iframe {
+    width: 30vw;
+    height: 35vh;
+    border: 3px solid rgb(137, 0, 0);
+    border-radius: 10px;
+  }
+  main h3 {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 1150px) {
+  main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 80%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  main h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  main div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+  }
+  main div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 50px 0;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+  }
+  main div ul li {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 80%;
+    color: rgb(137, 0, 0);
+    text-align: end;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgb(137, 0, 0);
+  }
+  main div ul li span {
+    color: black;
+    position: absolute;
+    left: 0;
+  }
+  main div iframe {
+    width: 100%;
+    height: 50%;
+    border: 2px solid rgb(137, 0, 0);
+    border-radius: 10px;
+  }
+  main h3 {
+    text-align: center;
+    font-size: medium;
+  }
+}/*# sourceMappingURL=contacts.css.map */

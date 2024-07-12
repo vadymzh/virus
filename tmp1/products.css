@@ -1,0 +1,93 @@
+@media screen and (min-width: 1150px) {
+  html {
+    overflow: hidden;
+  }
+  main {
+    position: absolute;
+    width: calc(100% - 100px);
+    left: 50px;
+    height: calc(100% - 100px);
+    top: 100px;
+  }
+  main #hoverP {
+    position: absolute;
+    margin: 0;
+    width: 20%;
+    top: 0;
+    height: 6.25%;
+    border-bottom: 2px solid rgb(137, 0, 0);
+    transition: all 1s ease-in-out;
+  }
+  main #prodNav {
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0;
+    border-right: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+  }
+  main #prodNav p {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 5.625%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 15px;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+  }
+  main #prodNav p:hover {
+    padding-left: 25px;
+  }
+  main #prodInfo {
+    position: absolute;
+    height: 100%;
+    width: 30%;
+    left: 20%;
+    top: 0;
+    transition: top 1.5s ease-in-out;
+  }
+  main #prodInfo div {
+    height: 100%;
+    width: calc(100% - 100px);
+    margin: 0 25px 0 75px;
+    display: flex;
+    flex-direction: column;
+  }
+  main #prodInfo div h1 {
+    margin: 50px 0;
+  }
+  main #prodInfo div ul {
+    list-style-type: decimal;
+    width: 80%;
+  }
+  main #prodLinks {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    transition: top 2s ease-in-out;
+  }
+  main #prodLinks div {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  main #prodLinks div .card {
+    width: 80%;
+    margin: 25px 10%;
+  }
+  main #prodLinks div .card h2 {
+    margin: 0;
+  }
+}/*# sourceMappingURL=products.css.map */

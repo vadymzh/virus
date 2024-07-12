@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти | Корпорація Мережа</title>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/contacts.css">
+    <link rel="stylesheet" href="styles/standart.css">
+</head>
+
+<body>
+    <nav>
+        <div id="LogoText">
+            <a href="#"><img src="img/logo.png" alt="Логотип компанії"></a>
+            <h2>Корпорація<br>Мережа</h2>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="price.html">Ціни</a></li>
+            <li><a href="partners.html">Партнери</a></li>
+            <li><a href="news.hmtl">Новини</a></li>
+            <li class="active"><a href="contacts.html">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <div id="burgerBtn"></div>
+
+    <main>
+        <h1>Контакти</h1>
+        <div>
+            <ul>
+                <li><span>Адреса</span> м.Львів, вул.Коперника, 52/2</li>
+                <li><span>Е-Пошта</span> merega@intermerega.net </li>
+                <li><span>Телефон</span> (032)-240-30-34</li>
+                <li><span>Київстар</span> (098)-983-24-51</li>
+                <li><span>Vodafone</span> (066)-093-10-52</li>
+            </ul>
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.4814061397756!2d24.01613407602189!3d49.83341143160033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473add7b3cf43b29%3A0x986b24fa33c6a94e!2z0JrQvtGA0L_QvtGA0LDRhtGW0Y8g0JzQldCg0JXQltCQ!5e0!3m2!1suk!2sua!4v1720367454353!5m2!1suk!2sua"
+                allowfullscreen="true" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+
+        <h3>Графік роботи: Пн-Пт з 09:00 до 18:00</h3>
+    </main>
+
+    <script>
+        if (window.matchMedia("(min-width: 300px) and (max-width:1150px)").matches) {
+
+            //Меню для мобілок
+            document.getElementById("burgerBtn").addEventListener("click", () => {
+                document.getElementById("burgerBtn").classList.toggle("open");
+                document.querySelector("nav").classList.toggle("open");
+            })
+        }
+    </script>
+</body>
+
+</html>

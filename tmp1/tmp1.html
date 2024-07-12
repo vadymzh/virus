@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пропозиції | Корпорація Мережа</title>
+
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/standart.css">
+</head>
+
+<body>
+    <nav>
+        <div id="LogoText">
+            <a href="#"><img src="img/logo.png" alt="Логотип компанії"></a>
+            <h2>Корпорація<br>Мережа</h2>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="price.html">Ціни</a></li>
+            <li><a href="partners.html">Партнери</a></li>
+            <li><a href="news.hmtl">Новини</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <div id="burgerBtn"></div>
+
+    <main>
+        <div id="hoverP"></div>
+        <div id="prodNav">
+            <p>LIGA360: PRO</p>
+            <p>LIGA360: Legal Solution</p>
+            <p>LIGA360: Керівник</p>
+            <p>LIGA360: Юрист</p>
+            <p>Продукт 5</p>
+            <p>Продукт 6</p>
+            <p>Продукт 7</p>
+            <p>Продукт 8</p>
+            <p>Продукт 9</p>
+            <p>Продукт 10</p>
+            <p>Продукт 11</p>
+            <p>Продукт 12</p>
+            <p>Продукт 13</p>
+            <p>Продукт 14</p>
+            <p>Продукт 15</p>
+            <p>Продукт 16</p>
+
+        </div>
+
+        <div id="prodInfo">
+            <div>
+                <h1>Liga360 PRO</h1>
+                <p>Керівникам, юристам, бухгалтерам, complience-офіцерам, держслужбовцям та й всім!</p>
+                <ul>
+                    <li>Отримайте доступ до ключових джерел інформації</li>
+                    <li>Законодавство й судова практика</li>
+                    <li>Перевірка компаній</li>
+                    <li>Договірна робота</li>
+                    <li>Моніторинги</li>
+                </ul>
+            </div>
+
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>
+                <h1>Liga360 PRO 2</h1>
+                <p>Керівникам, юристам, бухгалтерам, complience-офіцерам, держслужбовцям та й всім!</p>
+                <ul>
+                    <li>Отримайте доступ до ключових джерел інформації</li>
+                    <li>Законодавство й судова практика</li>
+                    <li>Перевірка компаній</li>
+                    <li>Договірна робота</li>
+                    <li>Моніторинги</li>
+                </ul>
+            </div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+
+        <div id="prodLinks">
+            <div>
+                <div class="card">
+                    <h2>LIGA 360 PRO</h2>
+                    <ul>
+                        <li>Аналіз та моніторинг законодавства</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                    </ul>
+                    <p>Інформація та аналітичні інструменти на допомогу кожному фахівцю</p>
+                </div>
+                <div class="card">
+                    <h2>LIGA 360 PRO</h2>
+                    <ul>
+                        <li>Аналіз та моніторинг законодавства</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                        <li>Аналіз та моніторинг судових рішень і засідань</li>
+                    </ul>
+                    <p>Інформація та аналітичні інструменти на допомогу кожному фахівцю</p>
+                </div>
+            </div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+        </div>
+    </main>
+
+    <script>
+        if (window.matchMedia("(min-width: 300px) and (max-width:1150px)").matches) {
+
+            //Меню для мобілок
+            document.getElementById("burgerBtn").addEventListener("click", () => {
+                document.getElementById("burgerBtn").classList.toggle("open");
+                document.querySelector("nav").classList.toggle("open");
+            })
+        }
+
+        //Навігація
+        const nav = document.querySelector("#prodNav");
+        const info = document.querySelector("#prodInfo");
+        const links = document.querySelector("#prodLinks");
+        const hover = document.querySelector("#hoverP");
+
+        let Arr = Array.from(nav.children);
+        Arr.forEach((el) => {
+            el.addEventListener("click", () => {
+                let n = Arr.indexOf(el);
+
+                info.style.top = -(n * 100) + "%";
+                links.style.top = -(n * 100) + "%";
+
+                hover.style.top = ((n) * 100 / Arr.length) + "%";
+            })
+        });
+    </script>
+</body>
+
+</html>

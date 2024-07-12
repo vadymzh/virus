@@ -1,0 +1,120 @@
+$prime: rgb(137, 0, 0);
+$dark: black;
+$light: white;
+
+@media screen and (min-width: 1150px) {
+    html {
+        overflow: hidden;
+    }
+
+    main {
+        position: absolute;
+        width: calc(100% - 100px);
+        left: 50px;
+        height: calc(100% - 100px);
+        top: 100px;
+
+        #hoverP {
+            position: absolute;
+            margin: 0;
+            width: 20%;
+            top: 0;
+            height: calc(100% / 16);
+
+            border-bottom: 2px solid $prime;
+
+            transition: all 1s ease-in-out;
+        }
+
+        #prodNav {
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            left: 0;
+            border-right: 2px solid $dark;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-around;
+
+            p {
+                position: relative;
+                margin: 0;
+                width: 100%;
+                height: calc(90% / 16);
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding-left: 15px;
+                cursor: pointer;
+
+                transition: all 100ms ease-in-out;
+
+                &:hover {
+                    padding-left: 25px;
+                }
+            }
+
+
+        }
+
+        #prodInfo {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            left: 20%;
+            top: 0;
+            transition: top 1.5s ease-in-out;
+
+            div {
+                height: 100%;
+                width: calc(100% - 100px);
+                margin: 0 25px 0 75px;
+                display: flex;
+                flex-direction: column;
+
+                h1 {
+                    margin: 50px 0;
+                }
+
+                ul {
+                    list-style-type: decimal;
+                    width: 80%;
+                }
+            }
+        }
+
+        #prodLinks {
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            right: 0;
+            top: 0;
+            transition: top 2s ease-in-out;
+            //outline: 2px dotted blue;
+            
+            div {
+                height: 100%;
+                width: 100%;
+                //outline: 2px dotted red;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .card {
+                    //outline: 2px solid purple;
+                    width: 80%;
+                    margin: 25px 10%;
+
+                    h2 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 1150px) {}

@@ -1,0 +1,468 @@
+$prime: rgb(137, 0, 0);
+$dark: black;
+$light: white;
+
+@media screen and (min-width: 1150px) {
+    main {
+        width: 100%;
+        height: calc(100vh - 100px);
+        margin-top: 100px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        justify-content: start;
+
+        img {
+            width: 12.5vw;
+            margin: 100px;
+            outline: 10px solid $prime;
+            border-radius: 50%;
+            outline-offset: 15px;
+            transition: all 250ms ease-in-out;
+
+            &:hover {
+                outline-offset: 25px;
+            }
+        }
+
+        div {
+            margin-top: -2.5vw;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            width: 30vw
+        }
+
+        a {
+            position: fixed;
+            bottom: 25px;
+            right: 50px;
+            text-decoration: none;
+            color: $prime;
+            text-align: center;
+            line-height: 25pt;
+            transition: all 250ms ease-in-out;
+            font-size: large;
+
+            &:hover {
+                line-height: 35pt;
+            }
+        }
+    }
+
+    #info {
+        width: 70%;
+        margin-left: 15%;
+        position: relative;
+
+        ul {
+            font-size: x-large;
+
+            span {
+                color: $prime;
+                border-bottom: 2px solid $prime;
+            }
+
+            li {
+                font-size: medium;
+                margin: 15px 50px;
+            }
+        }
+
+        img {
+            opacity: 0.05;
+            position: absolute;
+            height: 100vh;
+            right: 0;
+            top: calc(50% - 30vh);
+            object-fit: contain;
+            object-position: 10vh;
+
+        }
+    }
+
+    #prices {
+        margin: 75px 0 150px 0;
+        width: 80%;
+        left: 10%;
+        height: 80vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h1.title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            align-items: end;
+            justify-content: space-around;
+            bottom: 0;
+            height: 100%;
+
+            .card {
+                border: 2px solid $prime;
+                border-radius: 10px;
+                margin: 0;
+                height: 100%;
+                position: relative;
+
+                h1 {
+                    position: relative;
+                    width: 100%;
+                    top: 0;
+                    padding: 15px 0;
+                    margin: 0;
+                    color: $light;
+                    background-color: $prime;
+                    text-align: center;
+                    font-size: x-large;
+
+
+                    border-bottom: 2px solid $prime;
+                    border-radius: 5px 5px 0 0;
+
+                }
+
+                p {
+                    margin: 10px;
+                    font-weight: 900;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0 15px;
+                    margin: 0;
+
+                    li {
+                        margin: 0.5%;
+                        font-size: 11pt;
+
+                        span {
+                            margin-right: 7px;
+                            color: $prime;
+                        }
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    border: 0;
+                    background-color: $prime;
+                    color: $light;
+                    padding: 10px;
+                    font-size: large;
+                    bottom: 0;
+                    position: absolute;
+                    cursor: pointer;
+                    border-radius: 0 0 5px 5px;
+                    transition: all 250ms ease-in-out;
+
+                    &:hover {
+                        padding: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    #orderForm {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 100%;
+        z-index: 2;
+        backdrop-filter: blur(10px);
+        transition: all 500ms ease-in-out;
+
+        form {
+            background-color: $light;
+            outline: 3px solid $prime;
+            border-radius: 5px;
+            position: absolute;
+            height: 70%;
+            width: 350px;
+            top: 15%;
+            left: 37.5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+
+            #closeForm {
+                position: absolute;
+                top: -50px;
+                right: -50px;
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $prime;
+                font-size: x-large;
+            }
+
+            img {
+                position: absolute;
+                z-index: 0;
+                width: 100%;
+                opacity: 0.05;
+            }
+
+            p {
+                margin: 0;
+                width: 70%;
+                text-align: center;
+                z-index: 1;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                align-items: center;
+                width: 80%;
+                z-index: 1;
+
+                input {
+                    margin: 10px;
+                    width: 100%;
+                    border: 0;
+                    resize: none;
+                    border-bottom: 2px solid $prime;
+                    background-color: transparent;
+
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+
+                button {
+                    margin: 15px 0;
+                    padding: 10px 20px;
+                    border: 3px solid $dark;
+                    border-radius: 15px;
+                    text-decoration: none;
+                    color: $dark;
+                    transition: all 250ms ease-in-out;
+                    background-color: $light;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        background-color: $prime;
+                        width: 0%;
+                        height: 100%;
+                        top: 0;
+                        left: 50%;
+                        border-radius: 10px;
+                        z-index: -1;
+                        transition: all 250ms ease-in-out;
+                    }
+
+                    &:hover {
+                        color: $light;
+                        transform: scale(1.1);
+
+                        &::after {
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 1150px) {
+
+    main {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        img {
+            position: absolute;
+            height: 30%;
+            top: 35%;
+            right: 0;
+            object-position: 75px;
+        }
+
+        div {
+            position: absolute;
+            top: 20%;
+            left: 25px;
+
+            p {
+                margin-top: 50px;
+                width: 50%;
+            }
+        }
+
+        a {
+            position: fixed;
+            bottom: 15px;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+            color: $prime;
+            line-height: 2;
+        }
+    }
+
+    #info {
+        position: relative;
+        width: 100%;
+
+        img#bgPic {
+            display: none
+        }
+
+        ul {
+            padding: 15px;
+            width: 80%;
+            position: relative;
+
+            span {
+                color: $prime;
+                font-size: large;
+                text-align: center;
+                width: 100%;
+            }
+
+            li {
+                margin: 10px 0 0 25px;
+            }
+        }
+    }
+
+    #prices {
+        margin-top: 50px;
+
+        h1.title {
+            text-align: center;
+        }
+
+        .cards {
+            .card {
+                outline: 2px solid $prime;
+                border-radius: 10px;
+
+                h1 {
+                    font-size: large;
+                    text-align: center;
+                    background-color: $prime;
+                    padding: 10px;
+                    border-radius: 5px 5px 0 0;
+                    color: $light
+                }
+
+                p {
+                    margin: 10px;
+                    font-style: italic;
+                }
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+
+                    li {
+                        margin: 5px 10px;
+                        font-size: small;
+
+                        span {
+                            color: $prime
+                        }
+                    }
+                }
+
+                button {
+                    width: 100%;
+                    border: 0;
+                    padding: 10px;
+                    color: $light;
+                    background-color: $prime;
+                    border-radius: 0 0 5px 5px;
+                }
+            }
+        }
+    }
+
+    #orderForm {
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        left: 100%;
+        top: 0;
+        z-index: 2;
+        transition: all 250ms ease-in-out;
+        background-color: $light;
+
+        
+
+        form {
+            width: 100%;
+            height: 100%;
+
+            img {
+                display: none;
+            }
+
+            #closeForm {
+                position: absolute;
+                top: 25px;
+                text-align: end;
+                font-size: x-large;
+            }
+
+            p {
+                text-align: center;
+                margin-top: 25%;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                width: 80%;
+                left: 10%;
+                
+                input {
+                    margin: 15px 0;
+                    background-color: transparent;
+                    border: 0;
+                    border-bottom: 2px solid $prime;
+
+                    &:focus {
+                        outline: 0;
+                    }
+                }
+
+                button {
+                    margin: 50px;
+                    padding: 10px;
+                    background-color: $light;
+                    border: 2px solid $prime;
+                    border-radius: 10px;
+
+                    &:active {
+                        outline: 1px solid $prime;
+                    }
+                }
+            }
+        }
+    }
+}
